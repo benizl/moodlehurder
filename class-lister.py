@@ -2,6 +2,13 @@
 
 import sys
 
+def print_usage():
+	print "Usage: class-lister.py INPUT.csv PREFIX Tag,g1,g2,g3 Tag,g4,g5 ..."
+	print "e.g. class-lister.py users.csv 'Prac' Alice,1,2,3 Bob,4,5,6,7"
+	exit()
+
+if len(sys.argv) < 3:
+	print_usage()
 
 inputfile = sys.argv[1]
 prefix = sys.argv[2]
@@ -10,9 +17,7 @@ groupsets = sys.argv[3:]
 ngroups = len(groupsets)
 
 if ngroups < 2:
-	print "Usage: class-lister.py INPUT.csv PREFIX Tag,g1,g2,g3 Tag,g4,g5 ..."
-	print "e.g. class-lister.py users.csv 'Prac' Alice,1,2,3 Bob,4,5,6,7"
-	exit()
+	print_usage()
 
 groups = {}
 
