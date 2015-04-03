@@ -36,3 +36,7 @@ python class-lister.py markbook.csv '' Alice,Mechatronics Bob,Software
 ```
 
 The /markbook.csv/ input file is an export from the Moodle grade book. It may or may not contain any grades, it's only used for names and group allocations.
+
+Licence
+-------
+All files released under GPLv3+ unless otherwise specified.
