@@ -50,7 +50,9 @@ python assignment-stats.py markbook.csv
 Output in the form
 
 Assignment Name
+
 Average +- Std
+
 Min - Max
 
 
