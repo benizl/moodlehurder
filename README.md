@@ -19,6 +19,7 @@ python group-marks.py --group-prefix "Team: " --score-sheet markfile.csv --assig
 
 *Output Name:* File name of output file. This can be imported back in to Moodle's gradebook.
 
+
 Class Lister
 ------------
 Generates lists of students in (sets of) groups.
@@ -36,6 +37,22 @@ python class-lister.py markbook.csv '' Alice,Mechatronics Bob,Software
 ```
 
 The /markbook.csv/ input file is an export from the Moodle grade book. It may or may not contain any grades, it's only used for names and group allocations.
+
+
+Assignment Stats
+----------------
+Summarises the marks from all assignments in a Moodle marks export CSV file.
+
+```
+python assignment-stats.py markbook.csv
+```
+
+Output in the form
+
+Assignment Name
+Average +- Std
+Min - Max
+
 
 Licence
 -------
