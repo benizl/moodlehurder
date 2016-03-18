@@ -20,6 +20,7 @@ if args.output_name is None:
 	args.output_name = args.score_sheet + '.out'
 
 def get_group(groups, prefix):
+	groups = groups.strip(' ,"\'"')
 	for g in groups.split(';'):
 		if g.startswith(prefix):
 			return g
@@ -28,6 +29,7 @@ def get_group(groups, prefix):
 
 with open(args.score_sheet, 'r') as f:
 	header_row = f.readline().strip().lower().split(',')
+	header_row = [ x.strip(' ,"\'"') for x in header_row ]
 	group_idx = header_row.index('groups')
 	id_idx = header_row.index('uni id')
 	mark_idx = header_row.index(args.assignment_name.lower())
@@ -85,4 +87,4 @@ print "%d unmarked: %s" % (len(unmarked), ', '.join(unmarked))
 print "---"
 print "%d grouped students" % (len(users) - len(ungrouped))
 print "%d marked groups" % len(scores)
-print "Average %d" % (sum([int(x) for x in scores.values()]) / len(scores))
+print "Average %d" % (sum([float(x) for x in scores.values()]) / len(scores))
