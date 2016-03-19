@@ -49,7 +49,8 @@ with open(args.score_sheet, 'r') as f:
 
 			continue
 
-		if mark.startswith('-'):
+		# Ignore no marks or spreadsheet equation errors (which start with '#')
+		if mark.startswith(('-','#')):
 			continue
 
 		if group in scores:
