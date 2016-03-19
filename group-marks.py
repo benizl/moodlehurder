@@ -29,7 +29,7 @@ def get_group(groups, prefix):
 
 with open(args.score_sheet, 'r') as f:
 	header_row = f.readline().strip().lower().split(',')
-	header_row = [ x.strip(' ,"\'"') for x in header_row ]
+	header_row = [ x.strip(' ,"\'') for x in header_row ]
 	group_idx = header_row.index('groups')
 	id_idx = header_row.index('uni id')
 	mark_idx = header_row.index(args.assignment_name.lower())
